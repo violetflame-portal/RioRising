@@ -13,8 +13,8 @@
   --sand: #F0DEB8;
   --sand-light: #FAF3E3;
   --sand-dark: #C9A86C;
-  --charcoal: #1E1508;
-  --charcoal-mid: #2E1E0C;
+  --charcoal: #1C1530;
+  --charcoal-mid: #140E28;
   --gold: #D4983A;
   --gold-light: #EDB96A;
   --sage: #7A8E6A;
@@ -27,12 +27,12 @@
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--charcoal); overflow-x: hidden; }
+body { font-family: 'Lato', sans-serif; font-size: 1.1rem; background: var(--cream); color: var(--charcoal); overflow-x: hidden; }
 
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-  background: rgba(30, 21, 8, 0.92);
+  background: rgba(28, 21, 48, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 2px solid var(--rust);
   padding: 0 1.5rem;
@@ -45,13 +45,18 @@ nav {
 }
 .nav-links { display: flex; gap: 0; list-style: none; }
 .nav-links a {
-  font-family: 'Oswald', sans-serif; font-size: 0.7rem; font-weight: 600;
+  font-family: 'Oswald', sans-serif; font-size: 0.82rem; font-weight: 600;
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--sand);
   text-decoration: none; padding: 0.35rem 0.65rem; transition: all 0.2s;
 }
 .nav-links a:hover { color: var(--white); background: rgba(196,85,46,0.4); }
 .nav-cta { background: var(--rust) !important; color: var(--white) !important; padding: 0.35rem 1rem !important; }
 .nav-cta:hover { background: var(--rust-dark) !important; }
+.nav-social { display: flex; align-items: center; gap: 0.55rem; }
+.nav-social-link { color: rgba(240,222,184,0.65); display: flex; align-items: center; transition: color 0.2s; }
+.nav-social-link:hover { color: var(--gold-light); }
+.nav-social-link svg { width: 17px; height: 17px; }
+@media (max-width: 900px) { .nav-social { display: none; } }
 
 /* HERO */
 #hero {
@@ -172,7 +177,7 @@ nav {
 section { scroll-margin-top: 54px; }
 .section-inner { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
 .section-eyebrow {
-  font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 600;
+  font-family: 'Oswald', sans-serif; font-size: 0.88rem; font-weight: 600;
   letter-spacing: 0.4em; text-transform: uppercase; color: var(--rust);
   margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.75rem;
 }
@@ -183,7 +188,7 @@ section { scroll-margin-top: 54px; }
   color: var(--charcoal); margin-bottom: 1.25rem;
 }
 .section-title em { color: var(--rust); font-style: italic; }
-.section-lead { font-size: 1.05rem; line-height: 1.85; color: #4A3A28; max-width: 680px; margin-bottom: 3rem; font-weight: 300; }
+.section-lead { font-size: 1.2rem; line-height: 1.9; color: #4A3850; max-width: 680px; margin-bottom: 3rem; font-weight: 300; }
 
 /* TAKE ACTION - light bg */
 #action { background: var(--sand-light); }
@@ -203,7 +208,7 @@ section { scroll-margin-top: 54px; }
   font-family: 'Oswald', sans-serif; font-size: 0.92rem; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 0.6rem;
 }
-.action-card p { font-size: 0.88rem; line-height: 1.7; color: #5A4830; margin-bottom: 1rem; font-weight: 300; }
+.action-card p { font-size: 1rem; line-height: 1.8; color: #4A3850; margin-bottom: 1rem; font-weight: 300; }
 .action-link {
   font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase; color: var(--rust);
@@ -229,23 +234,23 @@ section { scroll-margin-top: 54px; }
 .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
 
 /* STATS - keep dark, it's a dramatic contrast section */
-#stats { background: var(--charcoal-mid); padding: 4.5rem 2rem; }
+#stats { background: var(--charcoal-mid); padding: 6rem 2rem; }
 .stats-inner { max-width: 1100px; margin: 0 auto; }
-.stats-header { text-align: center; margin-bottom: 3rem; }
+.stats-header { text-align: center; margin-bottom: 4rem; }
 .stats-header h2 {
-  font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,4vw,2.6rem);
-  font-weight: 900; color: var(--white); margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif; font-size: clamp(2.4rem,5vw,3.4rem);
+  font-weight: 900; color: var(--white); margin-bottom: 0.75rem;
 }
-.stats-header p { font-size: 1rem; color: var(--sand-light); font-style: italic; font-weight: 300; }
-.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: rgba(255,255,255,0.08); }
-.stat-block { background: var(--charcoal); padding: 2.25rem 1.5rem; text-align: center; }
-.stat-number { font-family: 'Oswald', sans-serif; font-size: clamp(2.5rem,6vw,3.8rem); font-weight: 700; color: var(--gold-light); line-height: 1; margin-bottom: 0.4rem; }
-.stat-label { font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); margin-bottom: 0.35rem; }
-.stat-note { font-size: 0.78rem; color: rgba(240,222,184,0.65); line-height: 1.5; font-style: italic; font-weight: 300; }
-.laws-callout { background: rgba(26,18,9,0.6); border-left: 4px solid var(--gold); padding: 1.75rem; margin-top: 2.5rem; }
-.laws-callout h3 { font-family: 'Oswald', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
-.laws-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.6rem; }
-.law-item { font-size: 0.83rem; color: var(--sand); line-height: 1.5; padding-left: 1rem; position: relative; font-weight: 300; }
+.stats-header p { font-size: 1.1rem; color: var(--sand-light); font-style: italic; font-weight: 300; line-height: 1.8; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2px; background: rgba(255,255,255,0.08); }
+.stat-block { background: var(--charcoal); padding: 3rem 2rem; text-align: center; }
+.stat-number { font-family: 'Oswald', sans-serif; font-size: clamp(3.2rem,7vw,5.5rem); font-weight: 700; color: var(--gold-light); line-height: 1; margin-bottom: 0.6rem; }
+.stat-label { font-family: 'Oswald', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); margin-bottom: 0.6rem; }
+.stat-note { font-size: 0.95rem; color: rgba(240,222,184,0.75); line-height: 1.65; font-style: italic; font-weight: 300; }
+.laws-callout { background: rgba(20, 14, 40, 0.55); border-left: 4px solid var(--gold); padding: 1.75rem; margin-top: 2.5rem; }
+.laws-callout h3 { font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.laws-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.7rem; }
+.law-item { font-size: 0.97rem; color: var(--sand); line-height: 1.6; padding-left: 1rem; position: relative; font-weight: 300; }
 .law-item::before { content: '✕'; position: absolute; left: 0; color: var(--rust-light); font-size: 0.7rem; top: 2px; }
 
 /* DARK SKIES SECTION */
@@ -366,7 +371,7 @@ section { scroll-margin-top: 54px; }
 .impact-card.gold { border-top-color: var(--gold); }
 .impact-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
 .impact-card h3 { font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 0.5rem; }
-.impact-card p { font-size: 0.87rem; line-height: 1.7; color: #5A4830; font-weight: 300; }
+.impact-card p { font-size: 1rem; line-height: 1.8; color: #4A3850; font-weight: 300; }
 
 /* RESOURCES - warm sand */
 #resources { background: var(--sand-light); }
@@ -378,28 +383,19 @@ section { scroll-margin-top: 54px; }
 .resource-card:hover { box-shadow: 0 6px 20px rgba(196,85,46,0.1); }
 .resource-tag { font-family: 'Oswald', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); background: var(--rust); padding: 0.2rem 0.55rem; display: inline-block; margin-bottom: 0.6rem; }
 .resource-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.4rem; }
-.resource-card p { font-size: 0.85rem; line-height: 1.65; color: #5A4830; margin-bottom: 0.9rem; font-weight: 300; }
+.resource-card p { font-size: 1rem; line-height: 1.75; color: #4A3850; margin-bottom: 0.9rem; font-weight: 300; }
 .resource-link { font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rust); text-decoration: none; border-bottom: 1px solid rgba(196,85,46,0.3); padding-bottom: 1px; }
 
 /* COLLABORATE */
 #collaborate { background: var(--cream); }
-.collab-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; margin-bottom: 3.5rem; }
-@media (max-width: 768px) { .collab-intro { grid-template-columns: 1fr; gap: 2rem; } }
-.collab-text h3 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 900; color: var(--charcoal); margin-bottom: 0.75rem; }
-.collab-text p { font-size: 0.95rem; line-height: 1.85; color: #5A4830; margin-bottom: 0.75rem; font-weight: 300; }
-.roles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.75rem; }
-.role-chip { border: 1.5px solid var(--sand-dark); padding: 0.85rem 0.5rem; text-align: center; transition: all 0.2s; cursor: default; background: var(--white); }
-.role-chip:hover { border-color: var(--rust); background: rgba(196,85,46,0.04); }
-.role-icon { font-size: 1.4rem; margin-bottom: 0.3rem; }
-.role-label { font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--charcoal); }
-.platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
-.platform-card { border: 1.5px solid var(--sand-dark); padding: 1.75rem; background: var(--white); position: relative; }
-.platform-card.rec::after { content: 'RECOMMENDED'; position: absolute; top: -1px; right: 1.25rem; font-family: 'Oswald', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; background: var(--gold); color: var(--charcoal); padding: 0.18rem 0.45rem; }
-.platform-name { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.2rem; }
-.platform-cost { font-family: 'Oswald', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.65rem; }
-.platform-card p { font-size: 0.85rem; line-height: 1.65; color: #5A4830; margin-bottom: 0.5rem; font-weight: 300; }
-.pros { font-size: 0.8rem; color: var(--sage); line-height: 1.5; }
-.cons { font-size: 0.8rem; color: var(--rust); line-height: 1.5; }
+.collab-body { max-width: 720px; font-size: 1.2rem; line-height: 1.9; color: #4A3850; margin-bottom: 1.5rem; font-weight: 300; }
+.collab-cta-block { text-align: center; margin-top: 3.5rem; padding: 3.5rem 2rem; background: var(--sand-light); border-top: 3px solid var(--rust); }
+.collab-cta-text { font-size: 1.2rem; color: var(--charcoal); line-height: 1.85; margin-bottom: 2.5rem; font-style: italic; max-width: 600px; margin-left: auto; margin-right: auto; }
+.social-icons-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+.social-icon-link { display: flex; flex-direction: column; align-items: center; gap: 0.55rem; color: var(--charcoal); text-decoration: none; padding: 1.5rem 1.75rem; background: var(--white); border: 1.5px solid var(--sand-dark); transition: all 0.2s; min-width: 105px; }
+.social-icon-link:hover { border-color: var(--rust); background: rgba(196,85,46,0.05); color: var(--rust); }
+.social-icon-link svg { width: 38px; height: 38px; }
+.social-icon-name { font-family: 'Oswald', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
 .join-box { background: var(--charcoal); padding: 3rem 2rem; text-align: center; margin-top: 3rem; }
 .join-box h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic; color: var(--white); margin-bottom: 0.75rem; }
 .join-box p { font-size: 0.95rem; color: var(--sand); line-height: 1.7; max-width: 480px; margin: 0 auto 1.5rem; font-weight: 300; }
@@ -443,6 +439,13 @@ footer { background: var(--charcoal); border-top: 3px solid var(--rust); padding
     <li><a href="#collaborate">Collaborate</a></li>
     <li><a href="https://www.change.org/p/stop-the-construction-of-the-wall-in-big-bend-ranch-state-park-big-bend-national-park" target="_blank" class="nav-cta">Sign Petition →</a></li>
   </ul>
+  <div class="nav-social">
+    <a href="#" class="nav-social-link" aria-label="Instagram" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    <a href="#" class="nav-social-link" aria-label="Facebook" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    <a href="#" class="nav-social-link" aria-label="YouTube" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+    <a href="#" class="nav-social-link" aria-label="TikTok" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="#" class="nav-social-link" aria-label="X / Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -818,109 +821,41 @@ footer { background: var(--charcoal); border-top: 3px solid var(--rust); padding
 <!-- COLLABORATE -->
 <section id="collaborate">
   <div class="section-inner">
-    <p class="section-eyebrow">Artists, Creators &amp; Dreamers</p>
-    <h2 class="section-title">Join <em>the Chorus</em></h2>
-    <p class="section-lead">This movement is built by people who love this land — musicians, filmmakers, photographers, writers, scientists, and organizers. If you have a gift to give, we need it. Every voice amplifies the chorus.</p>
+    <p class="section-eyebrow">Build With Us</p>
+    <h2 class="section-title">We Are Working <em>Collaboratively</em> to Create Content and Spread the Word</h2>
+    <p class="section-lead">We are looking for collaborators — musicians, photographers, videographers, writers, advocates — to help us protect this national treasure and amplify our reach.</p>
 
-    <div class="collab-intro">
-      <div class="collab-text">
-        <h3>What We're Building Together</h3>
-        <p>We are creating a <strong>collaborative anthem</strong> featuring artists across genres — to be released simultaneously across platforms for maximum reach. We're building short films, social media content kits, graphic campaigns, and live events that keep pressure on until this plan is stopped.</p>
-        <p>Every voice counts. Whether you have 200 followers or 2 million — your authentic personal story about Big Bend is worth more than any polished ad campaign. That's what moves people.</p>
-        <p><em>We are the desert chorus. And we are just getting started.</em></p>
-      </div>
-      <div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:var(--charcoal);margin-bottom:1rem;">Who We're Looking For</h3>
-        <div class="roles-grid">
-          <div class="role-chip"><div class="role-icon">🎵</div><div class="role-label">Musicians</div></div>
-          <div class="role-chip"><div class="role-icon">🎨</div><div class="role-label">Visual Artists</div></div>
-          <div class="role-chip"><div class="role-icon">🎬</div><div class="role-label">Filmmakers</div></div>
-          <div class="role-chip"><div class="role-icon">📸</div><div class="role-label">Photographers</div></div>
-          <div class="role-chip"><div class="role-icon">✍️</div><div class="role-label">Writers</div></div>
-          <div class="role-chip"><div class="role-icon">🖥️</div><div class="role-label">Designers</div></div>
-          <div class="role-chip"><div class="role-icon">📱</div><div class="role-label">Social Media</div></div>
-          <div class="role-chip"><div class="role-icon">🌿</div><div class="role-label">Scientists</div></div>
-          <div class="role-chip"><div class="role-icon">⚖️</div><div class="role-label">Legal / Policy</div></div>
-          <div class="role-chip"><div class="role-icon">🗣️</div><div class="role-label">Community Org</div></div>
-        </div>
-      </div>
-    </div>
+    <p class="collab-body reveal">Whether you have 200 followers or 2 million, your authentic personal story about Big Bend is worth more than any polished ad campaign. Every voice that speaks for this land makes it harder for decision-makers to look away. Join us.</p>
 
-    <!-- SIGN UP FORM -->
-    <div class="join-box reveal" style="margin-top:3rem; max-width:680px; margin-left:auto; margin-right:auto;">
-      <h3 style="font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:900; color:var(--charcoal); margin-bottom:0.5rem;">Add Your Voice</h3>
-      <p style="color:var(--charcoal-mid); font-size:0.92rem; line-height:1.7; margin-bottom:1.75rem;">Tell us who you are, what you do, and what Big Bend means to you. We'll reach out with next steps.</p>
-
-      <form name="collaborate" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap:1rem;">
-        <input type="hidden" name="form-name" value="collaborate" />
-        <p style="display:none;"><input name="bot-field" /></p>
-
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
-          <div>
-            <label style="font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--rust); display:block; margin-bottom:0.4rem;">Your Name *</label>
-            <input type="text" name="name" required placeholder="Full name"
-              style="width:100%; padding:0.7rem 0.9rem; border:1px solid var(--sand-dark); background:var(--cream); font-family:'Lato',sans-serif; font-size:0.9rem; color:var(--charcoal); border-radius:2px;" />
-          </div>
-          <div>
-            <label style="font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--rust); display:block; margin-bottom:0.4rem;">Email *</label>
-            <input type="email" name="email" required placeholder="your@email.com"
-              style="width:100%; padding:0.7rem 0.9rem; border:1px solid var(--sand-dark); background:var(--cream); font-family:'Lato',sans-serif; font-size:0.9rem; color:var(--charcoal); border-radius:2px;" />
-          </div>
-        </div>
-
-        <div>
-          <label style="font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--rust); display:block; margin-bottom:0.4rem;">Where are you based?</label>
-          <input type="text" name="location" placeholder="City, State / Country"
-            style="width:100%; padding:0.7rem 0.9rem; border:1px solid var(--sand-dark); background:var(--cream); font-family:'Lato',sans-serif; font-size:0.9rem; color:var(--charcoal); border-radius:2px;" />
-        </div>
-
-        <div>
-          <label style="font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--rust); display:block; margin-bottom:0.6rem;">How do you want to contribute? (select all that apply)</label>
-          <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-            <label class="check-chip"><input type="checkbox" name="role" value="Musician" /> 🎵 Musician</label>
-            <label class="check-chip"><input type="checkbox" name="role" value="Visual Artist" /> 🎨 Visual Artist</label>
-            <label class="check-chip"><input type="checkbox" name="role" value="Filmmaker" /> 🎬 Filmmaker</label>
-            <label class="check-chip"><input type="checkbox" name="role" value="Photographer" /> 📸 Photographer</label>
-            <label class="check-chip"><input type="checkbox" name="role" value="Writer" /> ✍️ Writer</label>
-            <label class="check-chip"><input type="checkbox" name="role" value="Designer" /> 🖥️ Designer</label>
-            <label class="check-chip"><input type="checkbox" name="role" value="Social Media" /> 📱 Social Media</label>
-            <label class="check-chip"><input type="checkbox" name="role" value="Scientist" /> 🌿 Scientist</label>
-            <label class="check-chip"><input type="checkbox" name="role" value="Legal / Policy" /> ⚖️ Legal / Policy</label>
-            <label class="check-chip"><input type="checkbox" name="role" value="Community Organizer" /> 🗣️ Community Org</label>
-          </div>
-        </div>
-
-        <div>
-          <label style="font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--rust); display:block; margin-bottom:0.4rem;">What does Big Bend mean to you?</label>
-          <textarea name="message" rows="4" placeholder="Tell us your story — your connection to this land, your idea, or simply that you want in."
-            style="width:100%; padding:0.7rem 0.9rem; border:1px solid var(--sand-dark); background:var(--cream); font-family:'Lato',sans-serif; font-size:0.9rem; color:var(--charcoal); border-radius:2px; resize:vertical;"></textarea>
-        </div>
-
-        <button type="submit"
-          style="background:var(--rust); color:var(--white); font-family:'Oswald',sans-serif; font-size:0.85rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; padding:1rem 2rem; border:none; cursor:pointer; transition:background 0.2s; align-self:flex-start;">
-          Add My Voice →
-        </button>
-      </form>
-    </div>
-
-    <!-- COMMUNITY PLATFORMS -->
-    <div class="reveal" style="margin-top:3.5rem; text-align:center;">
-      <p style="font-family:'Oswald',sans-serif; font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--rust); margin-bottom:0.75rem;">Already In? Connect With Us</p>
-      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; margin-bottom:1rem;">
-        <a href="#" style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--charcoal); color:var(--sand); font-family:'Oswald',sans-serif; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.65rem 1.25rem; text-decoration:none; transition:background 0.2s;">
-          📘 Facebook Group
+    <div class="collab-cta-block reveal">
+      <p class="collab-cta-text">Find us on these platforms — connect with us there and let's build something together.</p>
+      <div class="social-icons-bar">
+        <a href="#" class="social-icon-link" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <span class="social-icon-name">Instagram</span>
         </a>
-        <a href="#" style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--charcoal); color:var(--sand); font-family:'Oswald',sans-serif; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.65rem 1.25rem; text-decoration:none; transition:background 0.2s;">
-          📷 Instagram
+        <a href="#" class="social-icon-link" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span class="social-icon-name">Facebook</span>
         </a>
-        <a href="#" style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--charcoal); color:var(--sand); font-family:'Oswald',sans-serif; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.65rem 1.25rem; text-decoration:none; transition:background 0.2s;">
-          💬 WhatsApp
+        <a href="#" class="social-icon-link" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          <span class="social-icon-name">YouTube</span>
+        </a>
+        <a href="#" class="social-icon-link" aria-label="TikTok" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          <span class="social-icon-name">TikTok</span>
+        </a>
+        <a href="#" class="social-icon-link" aria-label="X / Twitter" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+          <span class="social-icon-name">X / Twitter</span>
         </a>
       </div>
-      <p style="font-size:0.8rem; color:var(--sage); font-style:italic;">Links will be active once accounts are set up</p>
     </div>
 
   </div>
+</section>
+
 </section>
 
 <!-- FOOTER -->
